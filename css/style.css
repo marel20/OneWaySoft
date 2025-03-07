@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200;300&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100&family=Nova+Round&display=swap');
+
+/* 
+font-family: 'Barlow', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Nova Round', cursive; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #000000;
+}
+
+:root{
+  --black: #000000;
+  --golden: #DFAF50;
+  --grey: #b9b9b9;
+  --white: #FFFFFF;
+  --black2: #00000052;
+  --golden2: #dfaf50c9;
+}
+
+html, body, main {
+    overflow-x: hidden;
+    /* background-color: #000000 !important; */
+}
+html::-webkit-scrollbar{display: none;}
+html{
+  width: 100%;
+  margin: 0 auto;
+  background: url('../assets/img/oneway.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  background-attachment: fixed;
+}
+
+body{
+    background: url('../assets/img/oneway.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    background-attachment: fixed;
+  }
+
+.visible{
+    display: flex !important;
+    visibility: visible !important;
+}
+
+.hidden{
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/*----- Start Float Buttons -----*/
+
+.btnWsp{
+    position: fixed;
+    bottom: 60px;
+    right: 1.25rem;
+    z-index: 1700;
+}
+
+.btn-signUp{
+  padding: 15px;
+  border-radius: 30px 10px;
+  border: 2px solid var(--golden);
+  background-color: var(--black);
+  color: var(--white) !important;
+  width: 20%;
+  text-align: center;
+  font-weight: bold;
+  transition: .5s all;
+  margin-top: 4%;
+}
+.btn-signUp:hover, .btn-signUp a h4:hover{
+  border-radius: 10px 30px;
+  border: 2px solid var(--black);
+  background-color: var(--white);
+  color: var(--black) !important;
+  transition: .5s all;
+}
+
+.arrow {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  border: 2px solid var(--white);
+  border-radius: 10px;
+  padding: 9px;
+}
+
+.arrow .one-way-arrow1{
+  width: 30px;
+  height: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+  transform: rotate(45deg);
+  border-bottom: 12px solid var(--white);
+  border-left: 12px solid var(--white);
+  z-index: 1;
+}
+.arrow .one-way-arrow2{
+  width: 60px;
+  height: 15px;
+  background-color: var(--white);
+  padding: 2px 25px;
+  margin-left: -20px;
+  z-index: 2;
+}
+.arrow .one-way-arrow2 p{
+  display: none;
+  margin-top: -6px;
+  margin-left: -12px;
+  font-weight: bold;
+}
+.rotate{
+  transform: rotate(180deg);
+}
+
+.section{
+  margin: 5% auto;
+  padding: 30px 70px;
+}
+
+/* Contenedor de la flecha */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  transition: transform 0.3s ease;
+  transition: ease-in-out 0.5s;
+}
+
+/* Cambio de color al pasar el mouse */
+.scroll-down:hover {
+    color: var(--golden);
+    transition: ease-in-out 0.5s;
+}
+
+
+/*----- End Float Buttons -----*/
+
+/*----- Start Header -----*/
+header {
+  width: 100%;
+  height: 110px;
+  background-color: var(--black);
+}
+/* Estilos del Navbar */
+.navbarr {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  padding: 0 20px;
+  background: transparent;
+  transition: background 0.3s, color 0.3s;
+  z-index: 1000;
+  box-shadow: none !important;
+}
+
+/* Logo */
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.logo img {
+  width: 25%;
+}
+
+/* Links de navegación */
+.nav-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s, border-radius 0.3s;
+}
+
+.nav-links a:hover {
+  box-shadow: 3px 3px var(--golden);
+  transition: 0.5s ease;
+  border-radius: 10px;
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-links a li i{
+  color: var(--white);
+}
+
+.dropdown.contact-nav {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.contact-nav-list {
+  position: fixed; /* Lo fijamos en la pantalla */
+  background: rgba(50, 50, 50, 0.9);
+  border-radius: 8px;
+  padding: 10px 0;
+  list-style: none;
+  display: none;
+  width: 150px;
+  max-height: auto; /* Máxima altura con scroll */
+  overflow-y: auto;
+  z-index: 1000; /* Aseguramos que esté sobre la sección negra */
+}
+.contact-nav-list {
+  top: 12.6%;
+  left: 45%;
+}
+.contact-nav-list a li {
+  padding: 8px;
+  text-align: start;
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-nav-list li:hover {
+  background: rgba(100, 100, 100, 0.7);
+}
+
+/* Mostrar la lista al hacer hover */
+.dropdown.contact-nav:hover .contact-nav-list {
+  display: block;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--white);
+  padding: 8px;
+}
+.menu-toggle i {
+  color: var(--white);
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+}
+.login-user, .login-password {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-user input, .login-password input {
+  padding: 8px 12px;
+}
+.btn-login {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 10px 15px;
+  box-shadow: -4px -4px 20px var(--golden2);
+  border-radius: 15px;
+  transition: ease 0.5s;
+}
+.btn-login:hover{
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 4px 4px 20px var(--golden2);
+  transition: ease 0.5s;
+}
+
+.popup-login {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 90%;
+  height: 80vh;
+  background-color: var(--white);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1000;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mostrar popup */
+.popup-login.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: ease 0.5s;
+}
+
+/* Contenido del popup */
+.popup-login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.close-popup-login {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+/*----- End Header -----*/
+
+
+/*----- Start Footer -----*/
+
+
+/*----- End Footer -----*/
+
