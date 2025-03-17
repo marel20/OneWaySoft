@@ -25,6 +25,7 @@
     <!-- MDB -->
     <link rel="stylesheet" href="css/mdb.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
     <title>One Way Wall Street</title>
   </head>
   <body id="home">
@@ -32,6 +33,7 @@
       <div class="navbarr">
         <div class="logo">
             <img src="assets/logo/logo-blanco.png" alt="LogoOW">
+            <h1 class="visible">WS TRADING</h1>
         </div>
 
         <div class="login-btn-content hidden">
@@ -50,8 +52,8 @@
             <div class="dropdown contact-nav">
               <a href="#" style="padding: 15px;">Contacto</a>
               <ul class="contact-nav-list">
-                <a href="https://wa.me/+5493416744997"><li><i class="fa-brands fa-whatsapp"></i></li></a>
-                <a href="mailto:pozzilucianomartin@gmail.com"><li><i class="fa-solid fa-envelope"></i></li></a>
+                <a href="https://wa.me/+5493416744997"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Whatsapp</li></a>
+                <a href="mailto:pozzilucianomartin@gmail.com"><li><i style="margin-right: 10px;" class="fa-solid fa-envelope"></i>Correo</li></a>
               </ul>
             </div>
           </div>
@@ -73,7 +75,7 @@
     <div class="popup-login" id="login-popup">
       <div class="popup-login-content">
           <span class="close-popup-login">&times;</span>
-          <h2>Iniciar Sesión</h2>
+          <h2 class="visible">Iniciar Sesión</h2>
           <div class="login-form">
             <div class="login-user">
               <label for="user"></label>
@@ -90,7 +92,31 @@
     
     <main>
       <section id="heroHome" class="#">
-        
+        <article class="hero-index">
+          <div class="img-index">
+            <img src="assets/img/Web-OW.jpg" alt="">
+          </div>
+          <div class="register-form">
+            <div class="tittles-index">
+              <h2>La plataforma de trading definitiva para la bolsa de New York y los mercados mundiales.</h2>
+            </div>
+            <div class="content-name">
+              <div class="#">
+                <!-- <label for="name"></label> -->
+                <input type="text" id="name" placeholder="Nombre">
+              </div>
+              <div class="#">
+                <!-- <label for="lastname"></label> -->
+                <input type="text" id="lastname" placeholder="Apellido">
+              </div>
+            </div>
+            <div class="email-register">
+              <!-- <label for="email"></label> -->
+              <input type="email" id="email" placeholder="Email">
+            </div>
+            <button class="btn-register">Registrarse</button>
+          </div>
+        </article>
       </section>
 
       
@@ -108,16 +134,16 @@
 
     <!-- Footer -->
 
-    <footer class="#">
-      <div class="row">
+    <footer class="footerr">
+      <div class="footer-row">
         <div class="col-sm copyright">
           <p class="copyright">
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> | <br> Todos los derechos reservados | <br> <a href="https://mgsolutions.com.ar" target="_blank"><b>MG Solutions</b></a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Todos los derechos reservados | <a href="https://mgsolutions.com.ar" target="_blank"><b>MG Solutions</b></a>
           </p>
         </div>
         <div class="col-md-3 social-med">
           <h3>Síganos</h3>
-          <ul class="list-unstyled social">
+          <ul class="list-unstyled sociall">
             <li>
               <a href="https://www.facebook.com/profile.php?id=61571387507083" target="_blank"
                 ><span><i class="fab fa-facebook-f"></i></span
@@ -165,5 +191,6 @@
       AOS.init();
     </script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

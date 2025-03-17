@@ -52,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    
     initNavbar();
     initPopup();
 });
+
+

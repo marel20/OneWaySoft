@@ -94,6 +94,25 @@
 
     .login-form {
       flex-direction: column;
+      gap: 15px !important;
+    }
+
+    .btn-login {
+      width: 100% !important;
+    }
+
+    .login-user input, .login-password input {
+      width: 100% !important;
+      background-color: var(--black);
+    }
+
+    .hero-index {
+      flex-direction: column !important;
+      height: max-content;
+    }
+
+    .tittles-index {
+      text-align: center !important;
     }
     
   }
