@@ -45,16 +45,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Redirigir a home.php al hacer clic en "Ingresar"
             loginMobile.addEventListener("click", function () {
-                window.location.href = "home.php";
+                window.location.href = "pages/homeSoft.php";
             });
         } else {
             console.error("❌ popupLogin o loginPopup no encontrado en el DOM.");
         }
     }
 
-    
+    const loginPC = document.getElementById("loginPC");
+
+    function redirigir() {
+        window.location.href = "pages/homeSoft.php"; // Cambia esto por tu URL real
+    }
+
+    if (loginPC) {
+        loginPC.addEventListener("click", redirigir);
+    }
+
+    const scrollNav = document.querySelector(".scroll-navv");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 10) { // Cuando el usuario baja un poco
+        scrollNav.classList.add("show-scroll-nav");
+        } else {
+            scrollNav.classList.remove("show-scroll-nav");
+        }
+    });
+
+   
     initNavbar();
     initPopup();
+
 });
 
 

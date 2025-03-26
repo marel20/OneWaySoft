@@ -1,3 +1,9 @@
+<?php
+// session_start();
+            
+// $_SESSION['acceso']=0;
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -85,7 +91,7 @@
               <label for="password"></label>
               <input type="password" id="password" placeholder="Contraseña">
             </div>
-              <button id="loginMobile" class="btn-login">Ingresar</button>
+            <button id="loginMobile" class="btn-login">Ingresar</button>
           </div>
       </div>
     </div>
