@@ -33,61 +33,66 @@
     <link rel="stylesheet" href="../css/mdb.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
-    <title>One Way Wall Street</title>
+    <title>Home - Soft WS TRADING</title>
   </head>
   <body id="home">
     <header>
       <div class="navbarr">
         <div class="logo2">
-            <img src="../assets/logo/logo-blanco.png" alt="LogoOW">
-            <h1 class="visible">WS TRADING</h1>
+            <img class="visible" src="../assets/logo/logo-blanco.png" alt="LogoOW">
+            <h1>WS TRADING</h1>
         </div>
-
-        <div class="login-btn-content hidden">
-          <button id="popupLogin" class="btn-login">Iniciar Sesión</button>
-        </div>
-
 
         <div class="menu-toggle" style="margin-left: 10%;">
           <i class="fas fa-bars"></i>
         </div>
 
-        <nav class="nav-links">
+        <nav class="nav-links2">
+          <div>
+            <a href="homeSoft.php" style="padding: 15px;">Home</a>
+          </div>
           <div>
             <a href="chart.php" style="padding: 15px;">Chart</a>
-            <div class="dropdown contact-nav">
-              <a href="#" style="padding: 15px;">Dashboard</a>
-              <ul class="contact-nav-list">
-                <a href="https://wa.me/+5493416744997"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Whatsapp</li></a>
-                <a href="mailto:pozzilucianomartin@gmail.com"><li><i style="margin-right: 10px;" class="fa-solid fa-envelope"></i>Correo</li></a>
-              </ul>
-            </div>
-            <div class="dropdown contact-nav">
-              <a href="#" style="padding: 15px;">Manage</a>
-              <ul class="contact-nav-list">
-                <a href="https://wa.me/+5493416744997"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Whatsapp</li></a>
-                <a href="mailto:pozzilucianomartin@gmail.com"><li><i style="margin-right: 10px;" class="fa-solid fa-envelope"></i>Correo</li></a>
-              </ul>
-            </div>
-            <div class="dropdown contact-nav">
-              <a href="#" style="padding: 15px;">Help</a>
-              <ul class="contact-nav-list">
-                <a href="https://wa.me/+5493416744997"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Whatsapp</li></a>
-                <a href="mailto:pozzilucianomartin@gmail.com"><li><i style="margin-right: 10px;" class="fa-solid fa-envelope"></i>Correo</li></a>
-              </ul>
-            </div>
-            <div class="dropdown contact-nav">
-              <a href="#" style="padding: 15px;">About Us</a>
-              <ul class="contact-nav-list">
-                <a href="https://wa.me/+5493416744997"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Whatsapp</li></a>
-                <a href="mailto:pozzilucianomartin@gmail.com"><li><i style="margin-right: 10px;" class="fa-solid fa-envelope"></i>Correo</li></a>
-              </ul>
-            </div>
-            <!-- <a href="#" style="padding: 15px;">Ayuda</a> -->
-            <!-- <a href="#" style="padding: 15px;">Sobre Nosotros</a> -->
+          </div>
+          <div class="dropdown links-nav">
+            <a href="#" style="padding: 15px;">Dashboard</a>
+            <ul class="links-nav-list dash">
+              <a href="https://wa.me/+5493416744997"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Whatsapp</li></a>
+              <a href="mailto:pozzilucianomartin@gmail.com"><li><i style="margin-right: 10px;" class="fa-solid fa-envelope"></i>Correo</li></a>
+            </ul>
+          </div>
+          <div class="dropdown links-nav">
+            <a href="#" style="padding: 15px;">Manage</a>
+            <ul class="links-nav-list manage">
+              <a href="https://wa.me/+5493416744997"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Whatsapp</li></a>
+              <a href="mailto:pozzilucianomartin@gmail.com"><li><i style="margin-right: 10px;" class="fa-solid fa-envelope"></i>Correo</li></a>
+            </ul>
+          </div>
+          <div class="dropdown links-nav">
+            <a href="#" style="padding: 15px;">Help</a>
+            <ul class="links-nav-list help">
+              <a href="https://wa.me/+5493416744997"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Whatsapp</li></a>
+              <a href="mailto:pozzilucianomartin@gmail.com"><li><i style="margin-right: 10px;" class="fa-solid fa-envelope"></i>Correo</li></a>
+            </ul>
+          </div>
+          <div class="dropdown links-nav">
+            <a href="#" style="padding: 15px;">About Us</a>
+            <ul class="links-nav-list about-Us">
+              <a href="https://wa.me/+5493416744997"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Whatsapp</li></a>
+              <a href="mailto:pozzilucianomartin@gmail.com"><li><i style="margin-right: 10px;" class="fa-solid fa-envelope"></i>Correo</li></a>
+            </ul>
           </div>
         </nav>
 
+        <div class="content-userr">
+          <div class="dropdown links-nav">
+            <a href="#" style="padding: 15px;"><i class="fa-solid fa-user"></i><span style="margin-left: 10px;">Daniel Marelli</span></a>
+            <ul class="links-nav-list userr">
+              <a href="#"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Mis Datos</li></a>
+              <a href="../index.php"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Cerrar Sesión</li></a>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
 

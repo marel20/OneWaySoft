@@ -19,6 +19,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function initNavbar2() {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu2 = document.querySelector(".nav-links2");
+        const navLinks2 = document.querySelectorAll(".nav-links2 a");
+
+        if (menuToggle && navMenu2) {
+            menuToggle.addEventListener("click", function () {
+                navMenu2.classList.toggle("active");
+                menuToggle.classList.toggle("active");
+            });
+
+            navLinks2.forEach(link => {
+                link.addEventListener("click", function () {
+                    navMenu2.classList.remove("active");
+                    menuToggle.classList.remove("active");
+                });
+            });
+        }
+    }
+
     function initPopup() {
         const popupLogin = document.getElementById("popupLogin");
         const loginPopup = document.getElementById("login-popup");
@@ -74,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
    
     initNavbar();
+    initNavbar2();
     initPopup();
 
 });

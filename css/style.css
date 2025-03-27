@@ -170,7 +170,7 @@ header {
   height: 110px;
   display: flex;
   align-items: center;
-  justify-content: space-between !important;
+  justify-content: center !important;
   flex-wrap: nowrap !important;
   padding: 0 20px;
   background: var(--black) !important;
@@ -182,7 +182,7 @@ header {
 
 /* Logo */
 .logo {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -193,47 +193,56 @@ header {
 }
 .logo h1 {
   color: var(--orange);
+  margin-top: 3%;
 }
 
 .logo2 {
-  width: 100%;
+  width: 30%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
 }
 .logo2 img {
-  width: 10%;
+  width: 35%;
 }
 .logo2 h1 {
   color: var(--orange);
-  font-size: 25px;
+  font-size: 28px;
+  margin-top: 4%;
 }
 
 /* Links de navegación */
 .nav-links {
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
+.nav-links2 {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
 
-.nav-links a {
+.nav-links a, .nav-links2 a {
   color: var(--white);
   text-decoration: none;
   font-size: 16px;
   transition: background 0.3s, border-radius 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .content-userr a:hover, .nav-links2 a:hover {
   box-shadow: 3px 3px var(--golden);
   transition: 0.5s ease;
   border-radius: 10px;
   color: var(--white);
   text-decoration: none;
 }
-.nav-links a li i{
+.nav-links a li i, .nav-links2 a li i{
   color: var(--white);
 }
 
@@ -255,7 +264,7 @@ header {
   overflow-y: auto;
   z-index: 1000; /* Aseguramos que esté sobre la sección negra */
   top: 12.5%;
-  left: 45%;
+  left: 50%;
 }
 
 .contact-nav-list a li {
@@ -287,13 +296,14 @@ header {
 }
 
 .login-form {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
   margin: 0 auto;
   flex-wrap: nowrap;
+  margin-left: 4%;
 }
 .login-user, .login-password {
   width: 100%;
@@ -371,6 +381,62 @@ header {
   cursor: pointer;
 }
 
+/* dropdown pages */
+.dropdown.links-nav {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.links-nav i {
+  color: var(--white);
+}
+
+.links-nav-list {
+  position: fixed; /* Lo fijamos en la pantalla */
+  background: rgba(50, 50, 50, 0.9);
+  border-radius: 8px;
+  padding: 10px 0;
+  list-style: none;
+  display: none;
+  width: 150px;
+  max-height: auto; /* Máxima altura con scroll */
+  overflow-y: auto;
+  z-index: 1000; /* Aseguramos que esté sobre la sección negra */
+  top: 12.5%;
+}
+
+.links-nav-list a li {
+  padding: 8px;
+  text-align: start;
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.links-nav-list li:hover {
+  background: rgba(100, 100, 100, 0.7);
+}
+
+/* Mostrar la lista al hacer hover */
+.dropdown.links-nav:hover .links-nav-list {
+  display: block;
+}
+
+.content-userr {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  text-align: right;
+}
+.userr{
+  top: 12.5% !important;
+  right: 1% !important;
+}
+.content-userr span {
+  color: var(--white);
+}
 /* Contenedor fijo oculto al inicio */
 .scroll-navv {
   position: fixed;
@@ -382,6 +448,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
   transform: translateY(-100%);
   transition: transform 0.4s ease-in-out;
@@ -444,9 +511,16 @@ header {
 
 .tittles-index {
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .tittles-index h2, .tittles-index h4 {
   color: var(--white);
+}
+.tittles-index h1 {
+  color: var(--orange);
 }
 
 .content-name, .email-register {

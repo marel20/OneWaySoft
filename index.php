@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="css/mdb.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
-    <title>One Way Wall Street</title>
+    <title>WS TRADING - One Way Wall Street</title>
   </head>
   <body id="home">
     <header>
@@ -104,6 +104,7 @@
           </div>
           <div class="register-form">
             <div class="tittles-index">
+              <h1 class="hidden">WS TRADING</h1>
               <h2>La plataforma de trading definitiva para la bolsa de New York y los mercados mundiales.</h2>
             </div>
             <div class="content-name">
