@@ -235,7 +235,7 @@ header {
   transition: background 0.3s, border-radius 0.3s;
 }
 
-.nav-links a:hover, .content-userr a:hover, .nav-links2 a:hover {
+.nav-links a:hover, .content-userr a:hover, .content-language a:hover, .nav-links2 a:hover {
   box-shadow: 3px 3px var(--golden);
   transition: 0.5s ease;
   border-radius: 10px;
@@ -422,27 +422,105 @@ header {
   display: block;
 }
 
+.userr-lang {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+}
+.no-hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+.no-hover:hover {
+  background-color: transparent !important;
+  cursor: default !important;
+}
 .content-userr {
-  width: 15%;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 20px;
   text-align: right;
 }
 .userr{
   top: 12.5% !important;
   right: 1% !important;
 }
-.content-userr span {
+
+.content-userr a span {
+  color: var(--white);
+  text-align: center;
+  border-bottom: 1px solid var(--orange);
+}
+.content-userr a img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+}
+
+.content-language {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* gap: 20px; */
+  text-align: center;
+}
+.language {
+  top: 12.5% !important;
+  right: 3% !important;
+}
+.content-language i {
   color: var(--white);
 }
+.content-language i::after {
+  content: attr(data-tooltip); /* Extrae el texto del tooltip */
+  position: absolute;
+  top: -35px; /* Lo coloca arriba del icono */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(50, 50, 50, 0.9);
+  color: var(--white);
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  text-transform: capitalize ; /* Asegura que respete el texto original */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+  font-weight: 300;
+}
+
+/* Flecha del tooltip */
+.content-language i::before {
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Activar tooltip al pasar el mouse */
+.content-language i:hover::after,
+.content-language i:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 /* Contenedor fijo oculto al inicio */
 .scroll-navv {
   position: fixed;
   top: 110px;
   left: 0;
-  width: 100%;
+  width: 71%;
   height: 50px; /* Ajusta la altura según necesidad */
   background: var(--orange); /* Color de fondo */
   display: flex;
@@ -565,6 +643,98 @@ header {
 }
 
 /*----- End Index Soft -----*/
+
+/*----- Start HomeSoft Page -----*/
+.heroSoft {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-page {
+  width: 71%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--black);
+  border-right: 1px solid var(--grey);
+  height: 100vh;
+}
+.alerts {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid var(--grey);
+  height: 100vh;
+}
+.side-nav {
+  width: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--black);
+  height: 100vh;
+}
+
+/*----- End HomeSoft Page -----*/
+
+/*----- Start Chart Page -----*/
+.chart-page {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+  
+.nav-chart {
+  grid-column: span 12 / span 12;
+  background-color: #000000;
+}
+
+.sidenav-chart-left {
+  grid-row: span 4 / span 4;
+  grid-column-start: 12;
+  grid-row-start: 2;
+  background-color: #000000;
+}
+
+.sidenav-chart-right {
+  grid-row: span 4 / span 4;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  background-color: #000000;
+}
+
+.alerts-chart {
+  grid-column: span 3 / span 3;
+  grid-row: span 4 / span 4;
+  grid-column-start: 9;
+  grid-row-start: 2;
+  border: 2px solid var(--grey);
+}
+
+.chart {
+  grid-column: span 7 / span 7;
+  grid-row: span 3 / span 3;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  background-color: var(--orange);
+}
+
+.toolbar-chart {
+  grid-column: span 7 / span 7;
+  grid-column-start: 2;
+  grid-row-start: 5;
+  background-color: var(--golden);
+}
+
+/*----- End Chart Page -----*/
 
 
 /*----- Start Footer -----*/

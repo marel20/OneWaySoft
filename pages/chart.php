@@ -36,15 +36,11 @@
     <title>Chart - Soft WS TRADING</title>
   </head>
   <body id="home">
-    <header>
+  <!-- <header>
       <div class="navbarr">
         <div class="logo2">
             <img class="visible" src="../assets/logo/logo-blanco.png" alt="LogoOW">
             <h1>WS TRADING</h1>
-        </div>
-
-        <div class="menu-toggle" style="margin-left: 10%;">
-          <i class="fas fa-bars"></i>
         </div>
 
         <nav class="nav-links2">
@@ -84,73 +80,49 @@
           </div>
         </nav>
 
-        <div class="content-userr">
-          <div class="dropdown links-nav">
-            <a href="#" style="padding: 15px;"><i class="fa-solid fa-user"></i><span style="margin-left: 10px;">Daniel Marelli</span></a>
-            <ul class="links-nav-list userr">
-              <a href="#"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Mis Datos</li></a>
-              <a href="../index.php"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Cerrar Sesión</li></a>
-            </ul>
+        <div class="userr-lang">
+          <div class="content-language">
+            <div class="dropdown links-nav">
+              <a href="#" style="padding: 15px;"><i class="fas fa-globe" data-tooltip="Idioma"></i></a>
+              <ul class="links-nav-list language">
+                <a href="#"><li data-lang="es">Español</li></a>
+                <a href="#"><li data-lang="en">English</li></a>
+                <a href="#"><li data-lang="fr">Français</li></a>
+                <a href="#"><li data-lang="de">Deutsch</li></a>
+                <a href="#"><li data-lang="it">Italiano</li></a>
+              </ul>
+            </div>
+          </div>
+          <div class="content-userr">
+            <div class="dropdown links-nav">
+              <a href="#" style="padding: 15px;"><i class="fa-solid fa-user"></i></a>
+              <ul class="links-nav-list userr">
+                <a href="#"><li class="no-hover"><img src="../assets/logo/logo-blanco.png" alt=""><span>Galo Francisco Comba Ramirez</span></li></a>
+                <a href="#"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Mis Datos</li></a>
+                <a href="../index.php"><li><i style="margin-right: 10px;" class="fa-brands fa-whatsapp"></i>Cerrar Sesión</li></a>
+              </ul>
+            </div>
           </div>
         </div>
+
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
       </div>
-    </header>
+    </header> -->
 
-    <div class="scroll-navv">
-      <a href="#">Market Summary</a>
-      <a href="#">US Stocks</a>
-      <a href="#">Crypto</a>
-      <a href="#">Futures</a>
-      <a href="#">Forex</a>
-      <a href="#">Economy</a>
-      <a href="#">Brokers</a>
-    </div>
 
-    <div class="popup-login" id="login-popup">
-      <div class="popup-login-content">
-          <span class="close-popup-login">&times;</span>
-          <h2 class="visible">Iniciar Sesión</h2>
-          <div class="login-form">
-            <div class="login-user">
-              <label for="user"></label>
-              <input type="text" id="user" placeholder="Usuario">
-            </div>
-            <div class="login-password">
-              <label for="password"></label>
-              <input type="password" id="password" placeholder="Contraseña">
-            </div>
-            <button id="loginMobile" class="btn-login">Ingresar</button>
-          </div>
-      </div>
-    </div>
-    
-    <main style="height: 900vh; background-color: #000000;">
-      <!-- <section id="heroHome" class="#">
-        <article class="hero-index">
-          <div class="img-index">
-            <img src="assets/img/Web-OW.jpg" alt="">
-          </div>
-          <div class="register-form">
-            <div class="tittles-index">
-              <h2>La plataforma de trading definitiva para la bolsa de New York y los mercados mundiales.</h2>
-            </div>
-            <div class="content-name">
-              <div class="#">
-                <input type="text" id="name" placeholder="Nombre">
-              </div>
-              <div class="#">
-                <input type="text" id="lastname" placeholder="Apellido">
-              </div>
-            </div>
-            <div class="email-register">
-              <input type="email" id="email" placeholder="Email">
-            </div>
-            <button class="btn-register">Registrarse</button>
-          </div>
-        </article>
-      </section> -->
-
-      
+    <main>
+      <section class="chart-page">
+      <div class="nav-chart">1</div>
+      <div class="sidenav-chart-left">2</div>
+      <div class="sidenav-chart-right">3</div>
+      <div class="alerts-chart">4</div>
+      <div class="chart">5</div>
+      <div class="toolbar-chart">6</div>
+        
+      </section>
+        
     </main>
 
     <div id="whatsapp" class="btnWsp">
@@ -165,7 +137,7 @@
 
     <!-- Footer -->
 
-    <footer class="footerr">
+    <!-- <footer class="footerr">
       <div class="footer-row">
         <div class="col-sm copyright">
           <p class="copyright">
@@ -203,7 +175,7 @@
           </ul>
         </div>
       </div>
-    </footer>
+    </footer> -->
     
 
     

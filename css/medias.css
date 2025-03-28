@@ -53,13 +53,17 @@
         z-index: 1000;
         padding: 0px 20px;
         background: transparent;
+        justify-content: space-between !important;
     }
 
     .logo img {
       width: 55%;
     }
-    .logo2 img {
-      width: 45%;
+    .logo2 {
+      width: 50%;
+    }
+    .userr-lang {
+      width: 30%;
     }
 
     .contact-nav-list {
@@ -68,12 +72,12 @@
     }
     /* Botón de menú */
     .menu-toggle {
-        display: block;
-        z-index: 1100;
-        font-size: 28px;
-        color: var(--white);
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
+      display: block;
+      z-index: 1100;
+      font-size: 28px;
+      color: var(--white);
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
     }
 
     /* Efecto de rotación del icono */
@@ -89,6 +93,7 @@
     .menu-toggle i {
         font-size: 24px;
         color: var(--white);
+        text-align: right;
     }
     
     .login-btn-content {
@@ -119,6 +124,7 @@
     }
 
     .scroll-navv {
+      width: 100% !important;
       height: auto;
     }
 
@@ -127,24 +133,29 @@
     }
 
     .dash {
-      top: 25% !important;
+      top: 36% !important;
       left: 30% !important;
     }
     .manage{
-      top: 36% !important;
+      top: 49% !important;
       left: 25% !important;
     }
     .help{
-      top: 48% !important;
+      top: 62% !important;
       left: 17.8% !important;
     }
     .about-Us{
-      top: 59% !important;
+      top: 74% !important;
       left: 27% !important;
     }
-    .userr{
-      top: 70% !important;
-      left: 12% !important;
+
+    .userr {
+      top: 11.5% !important;
+    }
+
+    .language {
+      top: 11.5% !important;
+      right: 15% !important;
     }
     
   }
