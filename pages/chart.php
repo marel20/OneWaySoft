@@ -114,18 +114,27 @@
 
     <main>
       <section class="chart-page">
-      <div class="nav-chart">1</div>
-      <div class="sidenav-chart-left">2</div>
-      <div class="sidenav-chart-right">3</div>
-      <div class="alerts-chart">4</div>
-      <div class="chart">5</div>
-      <div class="toolbar-chart">6</div>
-        
+        <div class="nav-chart">1</div>
+        <div class="roww">
+          <div class="sidenav-chart-left">2</div>
+          <div class="columnn">
+            <div class="chart">5</div>
+            <div class="toolbar-chart">6
+              <div class="toggle-btn">
+                <i class="fa-solid fa-chevron-up"></i> 
+              </div>
+            </div>
+          </div>
+          <div class="alerts-chart">hola</div>
+          <div class="sidenav-chart-right">          
+            <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+          </div>
+        </div>
       </section>
         
     </main>
 
-    <div id="whatsapp" class="btnWsp">
+    <!-- <div id="whatsapp" class="btnWsp">
       <a href="https://wa.me/+5493416744997" class="btn-wsp" target="_blank">
         <img
           src="../assets/icons/whatsapp.png"
@@ -133,7 +142,7 @@
           alt="logowsp"
         />
       </a>
-    </div>
+    </div> -->
 
     <!-- Footer -->
 

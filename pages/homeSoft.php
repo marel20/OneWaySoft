@@ -48,7 +48,7 @@
             <a href="homeSoft.php" style="padding: 15px;">Home</a>
           </div>
           <div>
-            <a href="chart.php" style="padding: 15px;">Chart</a>
+            <a href="chart.php" target="_blank" style="padding: 15px;">Chart</a>
           </div>
           <div class="dropdown links-nav">
             <a href="#" style="padding: 15px;">Dashboard</a>
@@ -141,15 +141,15 @@
     
     <main>
       <section class="heroSoft">
-        <article class="content-page">
+        <div class="content-page">
 
-        </article>
-        <article class="alerts">
+        </div>
+        <div class="alerts">
 
-        </article>
-        <article class="side-nav">
-
-        </article>
+        </div>
+        <div class="side-nav">
+          <button class="btn-open-alerts"><i class="fas fa-stopwatch"></i></button>
+        </div>
       </section>
 
       
