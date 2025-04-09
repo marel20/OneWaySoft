@@ -33,14 +33,14 @@
     <link rel="stylesheet" href="../css/mdb.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
-    <title>Home - Soft WS TRADING</title>
+    <title>Home - Soft OW TRADING</title>
   </head>
   <body id="home">
     <header>
       <div class="navbarr">
         <div class="logo2">
             <img class="visible" src="../assets/logo/logo-blanco.png" alt="LogoOW">
-            <h1>WS TRADING</h1>
+            <h1>OW TRADING</h1>
         </div>
 
         <nav class="nav-links2">
