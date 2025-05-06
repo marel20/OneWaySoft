@@ -341,26 +341,125 @@
         </div>
 
         <div class="roww">
-          <div class="sidenav-chart-left">2</div>
+          <div class="sidenav-chart-left">
+            <!-- Botones generados desde JS -->
+          </div>
           <div class="columnn">
             <div class="chart">
               <iframe src="https://s.tradingview.com/widgetembed/?symbol=NASDAQ:AAPL&theme=dark&style=1&timezone=Etc/UTC" 
-              width="100%" height="500" frameborder="0" allowfullscreen>
+              width="100%" frameborder="0" allowfullscreen>
               </iframe>
             </div>
-            <div class="toolbar-chart">
-              <div class="toggle-btn">
-                <i class="fa-solid fa-chevron-up"></i> 
+            <div class="toolbar-nav-chart">
+              <div class="toolbar-nav-menu-chart">
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>1D</button>
+                </div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>5D</button>
+                </div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>1M</button>
+                </div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>3M</button>
+                </div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>6M</button>
+                </div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>YTD</button>
+                </div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>1Y</button>
+                </div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>5Y</button>
+                </div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>ALL</button>
+                </div>
+                <div class="border-right"></div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <button>Calendar</button>
+                </div>
               </div>
-
+              <div class="time-nav-toolbar-chart">
+                <div class="toolbar-nav-menu-item-chart">
+                  <div id="clock-chart"></div>
+                </div>
+                <div class="border-right"></div>
+                <div class="toolbar-nav-menu-item-chart">
+                  <div id="UTC-chart"></div>
+                </div>
+              </div>
+            </div>
+            <div class="toolbar-chart">
+              <div class="navbar-toolbar-chart">
+                <div class="content-item-toolbar">
+                  <div class="toolbar-chart-item">
+                    <button>Crypto Pairs</button>
+                  </div>
+                  <div class="toolbar-chart-item">
+                    <button>Crypto Pairs</button>
+                  </div>
+                  <div class="toolbar-chart-item">
+                    <button>Crypto Pairs</button>
+                  </div>
+                  <div class="toolbar-chart-item">
+                    <button>Crypto Pairs</button>
+                  </div>
+                  <div class="toolbar-chart-item">
+                    <button>Crypto Pairs</button>
+                  </div>
+                </div>
+                <div class="content-item-toolbar">
+                  <div class="toggle-btn">
+                    <i class="fa-solid fa-chevron-up text-white"></i> 
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="alerts-chart">
 
           </div>
-          <div class="sidenav-chart-right">          
-            <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
-
+          <div class="sidenav-chart-right">
+            <div class="sidenav-chart-content-items">
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+            </div>         
+            <div class="sidenav-chart-content-items">
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+              <div class="border-bottom"></div>
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+              <div class="sidenav-right-button">
+                <button class="btn-open-panel"><i class="fas fa-stopwatch"></i></button>
+              </div>
+            </div>  
           </div>
         </div>
       </section>

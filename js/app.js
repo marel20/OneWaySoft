@@ -111,53 +111,197 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-    
+        function updateNewYorkClock() {
+          const now = new Date();
+        
+          // Mostrar hora actual en Nueva York (24h)
+          const nyTime = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'America/New_York',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+          }).format(now);
+          document.getElementById("clock-chart").textContent = nyTime;
+        
+          // Calcular offset UTC (corrigiendo el signo)
+          const utcDate = new Date(now.toLocaleString("en-US", { timeZone: "UTC" }));
+          const nyDate = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" }));
+        
+          const offsetMinutes = (nyDate - utcDate) / (1000 * 60); // NY - UTC
+          const offsetHours = offsetMinutes / 60;
+          const formattedOffset = offsetHours >= 0 ? `+${offsetHours}` : offsetHours;
+        
+          // Mostrar "New York | UTC -4"
+          document.getElementById("UTC-chart").textContent = `New York UTC ${formattedOffset}`;
+        }
+        
+        setInterval(updateNewYorkClock, 1000);
+        updateNewYorkClock();
+        
 
 
     //toolbar-chart
-        const toggleBtn = document.querySelector(".toggle-btn");
-        const toolbarChart = document.querySelector(".toolbar-chart");
-        const chart = document.querySelector(".chart");
-
-        if (toggleBtn && toolbarChart) {
-            toggleBtn.addEventListener("click", function() {
-                let icono = this.querySelector("i");
-                toolbarChart.classList.toggle("expanded");
-
-                if (toolbarChart.classList.contains("expanded")) {
-                    icono.classList.replace("fa-chevron-up", "fa-chevron-down");
-                    chart.style.height = "20vh";
-                    chart.style.transition = "0.5s ease-in-out";
-
-                } else {
-                    icono.classList.replace("fa-chevron-down", "fa-chevron-up");
-                    chart.style.height = "80vh";
-                    chart.style.transition = "0.10s ease-in-out";
-                }
-            });
+    const toggleBtn = document.querySelector(".toggle-btn");
+    const toolbarChart = document.querySelector(".toolbar-chart");
+    const chart = document.querySelector(".chart");
+    
+    if (toggleBtn && toolbarChart) {
+      toggleBtn.addEventListener("click", function () {
+        const icono = this.querySelector("i");
+        toolbarChart.classList.toggle("expanded");
+    
+        if (toolbarChart.classList.contains("expanded")) {
+          icono.classList.replace("fa-chevron-up", "fa-chevron-down");
+          chart.style.height = "20vh"; // Reducir altura del chart
+          chart.style.transition = "height 0.5s ease-in-out";
+        } else {
+          icono.classList.replace("fa-chevron-down", "fa-chevron-up");
+          chart.style.height = "80vh"; // Volver a altura original
+          chart.style.transition = "height 0.5s ease-in-out";
         }
+      });
+    }
+        // const toggleBtn = document.querySelector(".toggle-btn");
+        // const toolbarChart = document.querySelector(".toolbar-chart");
+        // const chart = document.querySelector(".chart");
+
+        // if (toggleBtn && toolbarChart) {
+        //     toggleBtn.addEventListener("click", function() {
+        //         let icono = this.querySelector("i");
+        //         toolbarChart.classList.toggle("expanded");
+
+        //         if (toolbarChart.classList.contains("expanded")) {
+        //             icono.classList.replace("fa-chevron-up", "fa-chevron-down");
+        //             chart.style.height = "20vh";
+        //             chart.style.transition = "0.5s ease-in-out";
+        //             toolbarChart.style.height = "80vh";
+
+        //         } else {
+        //             icono.classList.replace("fa-chevron-down", "fa-chevron-up");
+        //             chart.style.height = "80vh";
+        //             chart.style.transition = "0.10s ease-in-out";
+        //             toolbarChart.style.height = "20vh";
+        //         }
+        //     });
+        // }
 
 
     //panel alert
+    // function panelAlert() {
+    //     const btnOpenPanel = document.querySelector(".btn-open-panel");
+    //     const alertsChart = document.querySelector(".alerts-chart");
+    //     const columnn = document.querySelector(".columnn");
+
+    //     if (btnOpenPanel && alertsChart && columnn) {
+    //         alertsChart.classList.remove("open");
+    //         columnn.style.width = "92%";
+
+    //         btnOpenPanel.addEventListener("click", function() {
+    //             if (alertsChart.classList.contains("open")) {
+    //                 alertsChart.classList.remove("open");
+    //                 columnn.style.width = "92%";
+    //             } else {
+    //                 alertsChart.classList.add("open");
+    //                 columnn.style.width = "70%";
+    //             }
+    //         });
+    //     }
+    // }
+
     function panelAlert() {
-        const btnOpenPanel = document.querySelector(".btn-open-panel");
-        const alertsChart = document.querySelector(".alerts-chart");
-        const columnn = document.querySelector(".columnn");
-
-        if (btnOpenPanel && alertsChart && columnn) {
-            alertsChart.classList.remove("open");
-            columnn.style.width = "92%";
-
-            btnOpenPanel.addEventListener("click", function() {
-                if (alertsChart.classList.contains("open")) {
-                    alertsChart.classList.remove("open");
-                    columnn.style.width = "92%";
-                } else {
-                    alertsChart.classList.add("open");
-                    columnn.style.width = "70%";
-                }
-            });
-        }
+      const buttons = document.querySelectorAll(".btn-open-panel");
+      const alertsChart = document.querySelector(".alerts-chart");
+      const columnn = document.querySelector(".columnn");
+    
+      const tooltipTexts = [
+        "Alerta 1", "Alerta 2", "Alerta 3", "Alerta 4",
+        "Indicador 1", "Indicador 2", "Indicador 3",
+        "Notificación 1", "Notificación 2", "Notificación 3"
+      ];
+    
+      const panelContents = [
+        `<h3 style="color:white;">Contenido de Alerta 1</h3>`,
+        `<h3 style="color:white;">Contenido de Alerta 2</h3>`,
+        `<h3 style="color:white;">Contenido de Alerta 3</h3>`,
+        `<h3 style="color:white;">Contenido de Alerta 4</h3>`,
+        `<h3 style="color:white;">Contenido de Indicador 1</h3>`,
+        `<h3 style="color:white;">Contenido de Indicador 2</h3>`,
+        `<h3 style="color:white;">Contenido de Indicador 3</h3>`,
+        `<h3 style="color:white;">Contenido de Notificación 1</h3>`,
+        `<h3 style="color:white;">Contenido de Notificación 2</h3>`,
+        `<h3 style="color:white;">Contenido de Notificación 3</h3>`
+      ];
+    
+      // Crear el handle una vez
+      const resizeHandle = document.createElement("div");
+      resizeHandle.classList.add("resize-handle");
+    
+      // Resize manual del panel
+      let isResizing = false;
+      resizeHandle.addEventListener("mousedown", function (e) {
+        isResizing = true;
+        document.body.style.cursor = "ew-resize";
+      });
+    
+      document.addEventListener("mousemove", function (e) {
+        if (!isResizing) return;
+    
+        const windowWidth = window.innerWidth;
+        let newWidth = windowWidth - e.clientX;
+        const min = windowWidth * 0.22;
+        const max = windowWidth * 0.37;
+    
+        if (newWidth < min) newWidth = min;
+        if (newWidth > max) newWidth = max;
+    
+        alertsChart.style.width = `${newWidth}px`;
+        columnn.style.width = `${100 - (newWidth / windowWidth) * 100}%`;
+      });
+    
+      document.addEventListener("mouseup", function () {
+        isResizing = false;
+        document.body.style.cursor = "";
+      });
+    
+      buttons.forEach((button, index) => {
+        button.classList.add("tooltip-button-sidenav-right");
+        button.setAttribute("title", tooltipTexts[index]);
+    
+        button.addEventListener("click", () => {
+          const currentIndex = alertsChart.dataset.activeIndex;
+    
+          if (currentIndex == index) {
+            alertsChart.classList.remove("open", "resizable");
+            alertsChart.style.width = "0";
+            alertsChart.dataset.activeIndex = "";
+            if (columnn) columnn.style.width = "92%";
+            return;
+          }
+    
+          const isFirstFour = index < 4;
+          const width = isFirstFour ? "22%" : "37%";
+          const columnWidth = isFirstFour ? "70%" : "60%";
+    
+          alertsChart.classList.add("open");
+          alertsChart.style.width = width;
+          alertsChart.dataset.activeIndex = index;
+          alertsChart.innerHTML = panelContents[index];
+          if (columnn) columnn.style.width = columnWidth;
+    
+          if (!isFirstFour) {
+            alertsChart.classList.add("resizable");
+            if (!alertsChart.contains(resizeHandle)) {
+              alertsChart.appendChild(resizeHandle); // ⬅️ se agrega SOLO dentro del alerts-chart
+            }
+          } else {
+            alertsChart.classList.remove("resizable");
+            if (alertsChart.contains(resizeHandle)) {
+              alertsChart.removeChild(resizeHandle); // ⬅️ se remueve si no corresponde
+            }
+          }
+        });
+      });
     }
 
     //panel user chart
@@ -256,43 +400,143 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         }
-    
-    //search bar chart
-    // function searchBarChart() {
-    //     const btnSearch = document.getElementById("btnSearchChart");
-    //     const popup = document.getElementById("searchPopupChart");
-    //     const closePopup = document.querySelector(".close-popup-search-chart");
-    //     const searchBar = document.getElementById("searchBarChart");
-    //     const searchResults = document.getElementById("searchResultsChart");
 
-    //     // Abrir el popup al hacer clic en el botón
-    //     btnSearch.addEventListener("click", () => {
-    //         popup.style.display = "flex";
-    //         searchBar.focus(); // Autofocus en la barra de búsqueda
-    //     });
+        function sidenavChartLeft() {
+            const scrollContainer = document.querySelector(".sidenav-chart-left");
+          
+            const buttons = [
+              { num: 1, tooltip: "Abrir opciones", dropdown: [ "Opción A", "Opción B", "Opción C", "Opción D", "Opción E" ], icon: "fas fa-cog" },
+              { num: 2, tooltip: "Abrir gráfico", dropdown: [ "1D", "1W", "1M" ], icon: "fas fa-chart-line" },
+              { num: 3, tooltip: "Estudios técnicos", dropdown: [ "RSI", "MACD", "Bollinger", "EMA" ], icon: "fas fa-wave-square" },
+              { num: 4, tooltip: "Indicadores", dropdown: [ "Volumen", "ADX", "Estocástico" ], icon: "fas fa-sliders-h" },
+              { num: 5, tooltip: "Plantillas", dropdown: [ "Guardar", "Cargar", "Eliminar", "Compartir" ], icon: "fas fa-layer-group" },
+              { num: 6, tooltip: "Alertas", dropdown: [ "Crear alerta", "Ver alertas" ], icon: "fas fa-bell" },
+              { num: 7, tooltip: "Diseño", dropdown: [ "Color de fondo", "Tipo de vela", "Rejilla", "Zoom" ], icon: "fas fa-paint-brush" },
+              { num: 8, tooltip: "Otras herramientas", dropdown: [ "Medida", "Captura", "Comparar" ], icon: "fas fa-tools" },
+              "line",
+              { num: 9, tooltip: "Seleccionar cruz", toggle: true, icon: "fas fa-crosshairs" },
+              { num: 10, tooltip: "Seleccionar puntero", toggle: true, icon: "fas fa-mouse-pointer" },
+              "line",
+              { num: 11, tooltip: "Dibujar", dropdown: [ "Línea", "Canal", "Flecha", "Fibbo", "Rectángulo", "Texto" ], icon: "fas fa-pencil-ruler" },
+              { num: 12, tooltip: "Activar regla", toggle: true, icon: "fas fa-ruler" },
+              { num: 13, tooltip: "Activar notas", toggle: true, icon: "fas fa-sticky-note" },
+              { num: 14, tooltip: "Más", dropdown: [ "Calendario", "Noticias", "Historial" ], icon: "fas fa-ellipsis-v" },
+              "line",
+              { num: 15, tooltip: "Herramientas extra", dropdown: [ "Exportar", "Importar" ], icon: "fas fa-toolbox" }
+            ];
+          
+            function createDropdown(items, referenceBtn) {
+                const dropdown = document.createElement("div");
+                dropdown.className = "dropdown-right-sidenav";
+              
+                items.forEach(item => {
+                  const link = document.createElement("a");
+                  link.href = "#";
+                  link.textContent = item;
+                  dropdown.appendChild(link);
+                });
+              
+                document.body.appendChild(dropdown);
+              
+                const rect = referenceBtn.getBoundingClientRect();
+                const dropdownHeight = dropdown.offsetHeight;
+                const viewportHeight = window.innerHeight;
+              
+                let top = rect.top;
+              
+                // Si el dropdown se va a salir de la pantalla, lo reposicionamos hacia arriba
+                if (rect.top + dropdownHeight > viewportHeight) {
+                  const overlap = rect.top + dropdownHeight - viewportHeight;
+                  top = rect.top - overlap - 5; // un margen de seguridad
+                  if (top < 0) top = 5; // por si se pasa muy arriba
+                }
+              
+                dropdown.style.top = `${top}px`;
+                dropdown.style.left = `${rect.right + 5}px`;
+              
+                return dropdown;
+              }
+          
+            buttons.forEach((item) => {
+              if (item === "line") {
+                const divider = document.createElement("div");
+                divider.className = "line-border-bottom";
+                scrollContainer.appendChild(divider);
+                return;
+              }
+          
+              const wrapper = document.createElement("div");
+              wrapper.className = "sidenav-left-button";
+          
+              const btn = document.createElement("button");
+              btn.innerHTML = `<i class="${item.icon}"></i>`;
+              wrapper.appendChild(btn);
+          
+              const tooltip = document.createElement("div");
+              tooltip.className = "tooltip-right-sidenav";
+              tooltip.textContent = item.tooltip;
+              wrapper.appendChild(tooltip);
+          
+              let dropdown = null; // <--- Se declara afuera del if
+          
+              if (item.dropdown) {
+                btn.addEventListener("click", (e) => {
+                  e.stopPropagation();
+          
+                  const isOpen = dropdown && dropdown.style.display === "flex";
+                  closeAllDropdowns();
+          
+                  if (!isOpen) {
+                    if (!dropdown) {
+                      dropdown = createDropdown(item.dropdown, wrapper);
+                    }
+          
+                    const rect = wrapper.getBoundingClientRect();
+                    dropdown.style.top = `${rect.top}px`;
+                    dropdown.style.left = `${rect.right + 5}px`;
+                    dropdown.style.display = "flex";
+                  }
+                });
+              }
+          
+              wrapper.addEventListener("mouseenter", () => {
+                const rect = wrapper.getBoundingClientRect();
+                tooltip.style.top = `${rect.top + rect.height / 2}px`;
+                tooltip.style.left = `${rect.right + 5}px`;
+                tooltip.style.transform = "translateY(-50%)";
+                tooltip.style.display = "block";
+                document.body.appendChild(tooltip);
+              });
+          
+              wrapper.addEventListener("mouseleave", () => {
+                tooltip.style.display = "none";
+                if (tooltip.parentNode === document.body) {
+                  document.body.removeChild(tooltip);
+                }
+              });
+          
+              if (item.toggle) {
+                btn.addEventListener("click", () => {
+                  wrapper.classList.toggle("active");
+                });
+              }
+          
+              scrollContainer.appendChild(wrapper);
+            });
+          
+            function closeAllDropdowns() {
+              document.querySelectorAll(".dropdown-right-sidenav").forEach((el) => {
+                el.style.display = "none";
+              });
+            }
+          
+            document.addEventListener("click", (e) => {
+              if (!e.target.closest(".sidenav-left-button")) {
+                closeAllDropdowns();
+              }
+            });
+          }
 
-    //     // Cerrar el popup al hacer clic en el botón de cerrar o fuera del popup
-    //     closePopup.addEventListener("click", () => {
-    //         popup.style.display = "none";
-    //     });
-
-    //     window.addEventListener("click", (e) => {
-    //         if (e.target === popup) {
-    //             popup.style.display = "none";
-    //         }
-    //     });
-
-    //     // Función de búsqueda en tiempo real
-    //     searchBar.addEventListener("keyup", () => {
-    //         const filter = searchBar.value.toLowerCase();
-    //         const items = searchResults.getElementsByTagName("li");
-
-    //         for (let item of items) {
-    //             let text = item.textContent.toLowerCase();
-    //             item.style.display = text.includes(filter) ? "block" : "none";
-    //         }
-    //     });
-    // }
 
     panelAlert();
     initNavbar();
@@ -300,7 +544,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initPopup();
     userPanelChart();
     navbarChart();
-    // searchBarChart();
+    sidenavChartLeft();
 });
 
 
